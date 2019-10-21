@@ -1,0 +1,17 @@
+Ever wondered how these beautiful geographical maps are created? Our World in Data has an extensive collection of 
+interactive data visualizations on aspects dedicated to the global changes in health, population growth, education, 
+culture, violence, political power, technology and several things that we care about. 
+
+These visualizations help us understand how and why the world has changed over the last few decades. 
+I was intrigued with this wealth of information and motivated to dive deeper.
+A quick google search led me to choropleth maps. Choropleth Maps display divided geographical areas or regions that are coloured, 
+shaded or patterned in relation to a data variable. The geographical area may expanse the entire world, or a country, 
+state or even a county. There are many tools and packages available to make a stand alone or static choropleth map using Python. 
+
+However, creating a dynamic map is slightly tricky and that is exactly what we are going to learn in this blog. In this step by step guide, we will recreate an interactive global choropleth map on Share of Adults who are obese (1975–2016) using Python libraries and package — Pandas, Geopandas and Bokeh.
+In the first section, we will create a static map and then later build on our code to introduce interactivity. The entire code can also be found at my github.com. Let’s begin!
+Downloads and Installations
+
+To render a world map, we need a shapefile with world coordinates. Natural Earth is a public domain map dataset that provides geospatial data at various resolutions. For our purpose, 1–110m small scale data is good enough. Click on the green button Download Countries v4.1.0 to download the shape folder. Next, go to Our World in Data and download the share-of-adults-defined-as-obese.csv by clicking on Data tab on the plot. Alternatively, feel free to download the files from my github repository. Install Geopandas and Bokeh.
+Explore pandas and Geopandas dataframes
+Import geopandas. Geopandas can read almost any vector-based spatial data format including ESRI shapefile using read_file command which returns a GeoDataframe object. The shapefile consists of many columns, of which only 3 are of any interest to us. The columns are renamed for easy referencing.
